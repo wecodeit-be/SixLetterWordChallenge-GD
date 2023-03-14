@@ -77,12 +77,14 @@ namespace SixLetterWordChallenge.Core.Services
             {
                 if (word.Length < 6)
                 {
-                    incompleteWords.Add(
-                        new WordWithToPrint
-                        {
-                            Word = word,
-                            ToPrint = word
-                        });
+                    var incompleteWord = new WordWithToPrint
+                    {
+                        Word = word,
+                        ToPrint = word
+                    };
+
+                    incompleteWords.Add(incompleteWord);
+                        
                 }
             }
 
