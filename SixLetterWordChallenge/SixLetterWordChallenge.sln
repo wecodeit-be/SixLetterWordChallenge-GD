@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixLetterWordChallenge.Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixLetterWordChallenge.Core", "SixLetterWordChallenge.Core\SixLetterWordChallenge.Core.csproj", "{C3C301E9-1EAA-452B-B259-BA220A7105DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixLetterWordChallenge.Test", "SixLetterWordChallenge.Test\SixLetterWordChallenge.Test.csproj", "{8CAC73C9-1319-420C-BD5A-C4CA42FE85A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C3C301E9-1EAA-452B-B259-BA220A7105DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3C301E9-1EAA-452B-B259-BA220A7105DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3C301E9-1EAA-452B-B259-BA220A7105DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CAC73C9-1319-420C-BD5A-C4CA42FE85A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CAC73C9-1319-420C-BD5A-C4CA42FE85A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CAC73C9-1319-420C-BD5A-C4CA42FE85A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CAC73C9-1319-420C-BD5A-C4CA42FE85A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
