@@ -3,7 +3,7 @@ using SixLetterWordChallenge.Core.Interfaces;
 
 namespace SixLetterWordChallenge.Core.Services
 {
-    internal class SixLetterWordChallengeService : ISixLetterWordChallengeService
+    public class SixLetterWordChallengeService : ISixLetterWordChallengeService
     {
         public IList<string> GetInitialWords(string path)
         {
@@ -63,7 +63,7 @@ namespace SixLetterWordChallenge.Core.Services
             if (!completedWords.Any())
                 throw new ArgumentNullException($"{nameof(words)} is empty");
 
-            return completedWords;
+            return completedWords.OrderBy(x => x.Word).ToList();
         }
 
         private List<WordWithToPrint> GetIncompleteWords(List<string> words)
