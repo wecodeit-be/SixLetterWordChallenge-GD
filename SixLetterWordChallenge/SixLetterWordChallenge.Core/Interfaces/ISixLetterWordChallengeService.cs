@@ -9,5 +9,6 @@ namespace SixLetterWordChallenge.Core.Interfaces
     public interface ISixLetterWordChallengeService
     {
         IList<string> GetInitialWords(string path);
+
     }
 }
