@@ -16,11 +16,17 @@ namespace SixLetterWordChallenge.Cons
 
             List<string> challengeWordsToPrint = new();
 
-            string input = "\\6LetterWordChallenge/input.txt";
+            string input = "/input.txt";
 
-            var path = Directory.GetParent(Directory.GetCurrentDirectory());
+            var path = Directory.GetCurrentDirectory();
 
             var words = sixLetterWordChallengeService.GetInitialWords(path + input).ToList();
+
+            if (!words.Any())
+            {
+                path = Directory.GetParent(Directory.GetCurrentDirectory())?.Parent?.Parent?.Parent?.Parent?.FullName;
+                words = sixLetterWordChallengeService.GetInitialWords(path + input).ToList();
+            }
 
             var challengeWords = sixLetterWordChallengeService.GetCompletedWords(words);
 
@@ -34,7 +40,7 @@ namespace SixLetterWordChallenge.Cons
 
             string fileName = Console.ReadLine();
 
-            File.WriteAllLines(path + "\\6LetterWordChallenge/" + fileName + ".txt", challengeWordsToPrint);
+            File.WriteAllLines(path + "/" + fileName + ".txt", challengeWordsToPrint);
         }
     }
 }

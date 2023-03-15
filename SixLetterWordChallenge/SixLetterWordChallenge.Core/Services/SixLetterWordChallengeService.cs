@@ -7,7 +7,15 @@ namespace SixLetterWordChallenge.Core.Services
     {
         public IList<string> GetInitialWords(string path)
         {
-            return File.ReadLines(path).Distinct().ToList();
+            try
+            {
+                var initialWords = File.ReadLines(path).Distinct().ToList();
+                return initialWords;
+            }
+            catch (Exception)
+            {
+                return new List<string>();
+            }
         }
 
         public IList<WordWithToPrint> GetCompletedWords(List<string> words)
@@ -59,7 +67,6 @@ namespace SixLetterWordChallenge.Core.Services
                 incompleteWords = newIncompleteWords;
             } while (incompleteWords.Any());
 
-
             if (!completedWords.Any())
                 throw new ArgumentNullException($"{nameof(words)} is empty");
 
@@ -84,7 +91,6 @@ namespace SixLetterWordChallenge.Core.Services
                     };
 
                     incompleteWords.Add(incompleteWord);
-                        
                 }
             }
 
