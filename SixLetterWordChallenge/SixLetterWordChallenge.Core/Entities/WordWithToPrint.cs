@@ -12,4 +12,7 @@ namespace SixLetterWordChallenge.Core.Entities
         public string Word { get; set; }
         public string ToPrint { get; set; }
     }
+    
+    // TODO: It seems odd that ToPrint needs to be set.
+    // What if you had a list/array of words that make up the combination?
 }
