@@ -17,14 +17,20 @@ namespace SixLetterWordChallenge.Core.Services
                 var initialWords = File.ReadLines(path).Distinct().ToList();
                 return initialWords;
             }
+            // TODO: Swallowing exceptions is never a good idea.
             catch (Exception)
             {
                 return new List<string>();
             }
         }
 
+        // TODO: This method does a lot
+        // * Get list of 6 letter words
+        // * Get list of incomplete words
+        // * Determination of (in)complete words
         public IList<WordWithToPrint> GetCompletedWords(List<string> words)
         {
+            // TODO: You could just return an empty list if there aren't any words
             if (!words.Any())
                 throw new ArgumentNullException($"{nameof(words)} is empty");
 
@@ -84,6 +90,7 @@ namespace SixLetterWordChallenge.Core.Services
 
         private List<WordWithToPrint> GetIncompleteWords(List<string> words)
         {
+            // TODO: Not necessary, you already check this in the calling method
             if (!words.Any())
                 throw new ArgumentNullException($"{nameof(words)} is empty");
 
@@ -111,6 +118,7 @@ namespace SixLetterWordChallenge.Core.Services
 
         private List<string> GetSixLetterWords(List<string> words)
         {
+            // TODO: Not necessary, you already check this in the calling method
             if (!words.Any())
                 throw new ArgumentNullException($"{nameof(words)} is empty");
 
