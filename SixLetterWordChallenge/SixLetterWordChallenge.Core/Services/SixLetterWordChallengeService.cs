@@ -5,6 +5,11 @@ namespace SixLetterWordChallenge.Core.Services
 {
     public class SixLetterWordChallengeService : ISixLetterWordChallengeService
     {
+        // TODO: This method does not belong here. This class shouldn't know/care where the data comes from. Move to another class, e.g. FileReader
+        // A class should hold one responsibility.
+        // This class is responsible for:
+        // * Reading files
+        // * Combining words
         public IList<string> GetInitialWords(string path)
         {
             try
@@ -67,9 +72,13 @@ namespace SixLetterWordChallenge.Core.Services
                 incompleteWords = newIncompleteWords;
             } while (incompleteWords.Any());
 
+            // TODO: Why throw an exception? It should be ok if there are no combinations.
             if (!completedWords.Any())
+                // TODO: Also, this exception type is wrong, the only argument in this method is "List<string> words"
                 throw new ArgumentNullException($"{nameof(words)} is empty");
 
+            // TODO: Is sorting here necessary?
+            // If you really want to sort, do it where you print it.
             return completedWords.OrderBy(x => x.Word).ToList();
         }
 
