@@ -110,7 +110,10 @@ namespace SixLetterWordChallenge.Core.Services
                 }
             }
 
+            // TODO: You throw an exception here, but not in GetSixLetterWords.
+            // Same comments apply, no need to throw an exception.
             if (!incompleteWords.Any())
+                // TODO: Wrong exception type
                 throw new ArgumentException($"{nameof(incompleteWords)} is empty");
 
             return incompleteWords;
