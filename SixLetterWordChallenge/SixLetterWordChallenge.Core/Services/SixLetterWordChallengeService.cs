@@ -10,10 +10,13 @@ namespace SixLetterWordChallenge.Core.Services
         // This class is responsible for:
         // * Reading files
         // * Combining words
+        // TODO: Suggestion: Change return type to IEnumerable<string>, that way you can enumerate the results while the file is being read
         public IList<string> GetInitialWords(string path)
         {
             try
             {
+                // TODO: Using ToList means it will fully read the file in memory.
+                // Suggestion: Use enumerator.
                 var initialWords = File.ReadLines(path).Distinct().ToList();
                 return initialWords;
             }
